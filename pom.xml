@@ -158,6 +158,11 @@
 	  <artifactId>controlsfx</artifactId>
 	  <version>8.40.14</version>
 	 </dependency>
+	 <dependency>
+	  <groupId>org.reactfx</groupId>
+	  <artifactId>reactfx</artifactId>
+	  <version>2.0-M5</version>
+	 </dependency>
 	</dependencies>
 
 </project>
