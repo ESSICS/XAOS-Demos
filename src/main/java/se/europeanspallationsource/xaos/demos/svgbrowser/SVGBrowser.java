@@ -22,7 +22,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import se.europeanspallationsource.xaos.tools.svg.SVGLoader;
+import se.europeanspallationsource.xaos.components.SVG;
 
 
 /**
@@ -30,7 +30,7 @@ import se.europeanspallationsource.xaos.tools.svg.SVGLoader;
  * <P>
  * The application allows to navigate the file system, select an {@code SVG} file,
  * and display a {@code PNG} version of the file along with the one generated
- * using {@link SVGLoader}. The structure of the pure JavaFX version is displayed
+ * using {@link SVG}. The structure of the pure JavaFX version is displayed
  * too, along with the properties of any selected structure element.
  * <P>
  * To convert the {@code SVG} file into a {@code PNG} one, the {@code rsvg-convert}
@@ -39,7 +39,7 @@ import se.europeanspallationsource.xaos.tools.svg.SVGLoader;
  *
  * @author claudio.rosati@esss.se
  * @see <a href="https://en.wikipedia.org/wiki/Librsvg">librsvg</a>
- * @see se.europeanspallationsource.xaos.tools.svg.SVGLoader
+ * @see se.europeanspallationsource.xaos.components.SVG
  */
 public class SVGBrowser extends Application {
 
