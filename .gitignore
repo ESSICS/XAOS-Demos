@@ -1,3 +1,6 @@
 /.projectKnowledge/
 /target/
 /nbproject/
+/xaos-demos.simple/target/
+/xaos-demos.simple.module/target/
+/xaos-demos.svgbrowser.module/target/
