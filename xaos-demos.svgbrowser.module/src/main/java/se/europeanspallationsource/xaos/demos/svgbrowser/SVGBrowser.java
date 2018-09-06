@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 claudiorosati.
+ * Copyright 2018 European Spallation Source ERIC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import se.europeanspallationsource.xaos.ui.control.SVG;
+import se.europeanspallationsource.xaos.ui.control.svg.SVG;
 
 
 /**
@@ -39,13 +39,11 @@ import se.europeanspallationsource.xaos.ui.control.SVG;
  *
  * @author claudio.rosati@esss.se
  * @see <a href="https://en.wikipedia.org/wiki/Librsvg">librsvg</a>
- * @see se.europeanspallationsource.xaos.ui.control.SVG
+ * @see se.europeanspallationsource.xaos.ui.control.svg.SVG
  */
+@SuppressWarnings( "ClassWithoutLogger" )
 public class SVGBrowser extends Application {
 
-	/**
-	 * @param args the command line arguments
-	 */
 	public static void main( String[] args ) {
 		launch(args);
 	}

@@ -42,8 +42,9 @@
 	</properties>
 
 	<modules>
-	 <module>xaos-demos.simple.module</module>
-	 <module>xaos-demos.svgbrowser.module</module>
+		<module>xaos-demos.filebrowser.module</module>
+		<module>xaos-demos.simple.module</module>
+		<module>xaos-demos.svgbrowser.module</module>
 	</modules>
 
 	<build>
