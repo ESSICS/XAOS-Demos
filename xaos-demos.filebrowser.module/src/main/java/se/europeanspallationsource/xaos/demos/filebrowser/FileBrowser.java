@@ -41,11 +41,14 @@ public class FileBrowser extends Application {
 	@Override
 	public void start( Stage stage ) throws Exception {
 
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/FileBrowser.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/FileBrowser.fxml"));
+		Parent root = loader.load();
+		FileBrowserController controller = (FileBrowserController) loader.getController();
 		Scene scene = new Scene(root);
 
 		stage.setTitle("File Browser");
 		stage.setScene(scene);
+		stage.setOnCloseRequest(e -> controller.getDirectoryMonitor().dispose());
 		stage.show();
 		
 	}

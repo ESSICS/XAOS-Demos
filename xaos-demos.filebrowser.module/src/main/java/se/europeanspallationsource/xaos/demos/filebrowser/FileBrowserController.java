@@ -22,11 +22,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TreeView;
+import se.europeanspallationsource.xaos.ui.control.tree.TreeItems;
 import se.europeanspallationsource.xaos.ui.control.tree.directory.TreeDirectoryMonitor;
 
 
@@ -40,15 +43,17 @@ public class FileBrowserController implements Initializable {
 	private static final Logger LOGGER = Logger.getLogger(FileBrowserController.class.getName());
 
 	private TreeDirectoryMonitor<ChangeSource, Path> directoryMonitor;
+	private final ExecutorService executor = Executors.newSingleThreadExecutor();
 	@FXML
 	private TreeView<Path> treeView;
 
+	public TreeDirectoryMonitor<?, Path> getDirectoryMonitor() {
+		return directoryMonitor;
+	}
 
 	@Override
 	@SuppressWarnings( "UseOfSystemOutOrSystemErr" )
 	public void initialize( URL url, ResourceBundle rb ) {
-
-		treeView.setShowRoot(false);
 
 		long startTime = System.currentTimeMillis();
 
@@ -56,9 +61,11 @@ public class FileBrowserController implements Initializable {
 
 			directoryMonitor = TreeDirectoryMonitor.build(ChangeSource.EXTERNAL);
 
-//			directoryMonitor.addTopLevelDirectory(Paths.get(System.getProperty("user.home"), "Documents").toAbsolutePath());
-			directoryMonitor.addTopLevelDirectory(Paths.get("/Users").toAbsolutePath());
+			directoryMonitor.addTopLevelDirectory(Paths.get(System.getProperty("user.home"), "Documents").toAbsolutePath());
+//			directoryMonitor.addTopLevelDirectory(Paths.get("/Users").toAbsolutePath());
 			treeView.setRoot(directoryMonitor.model().getRoot());
+			treeView.setShowRoot(false);
+			treeView.setCellFactory(TreeItems.defaultTreePathCellFactory());
 
 		} catch ( IOException ex ) {
 			LOGGER.log(Level.SEVERE, null, ex);
