@@ -61,8 +61,8 @@ public class FileBrowserController implements Initializable {
 
 			directoryMonitor = TreeDirectoryMonitor.build(ChangeSource.EXTERNAL);
 
-			directoryMonitor.addTopLevelDirectory(Paths.get(System.getProperty("user.home"), "Documents").toAbsolutePath());
-//			directoryMonitor.addTopLevelDirectory(Paths.get("/Users").toAbsolutePath());
+			directoryMonitor.addTopLevelDirectory(Paths.get(System.getProperty("user.home")).toAbsolutePath(), true);
+//			directoryMonitor.addTopLevelDirectory(Paths.get("/Users").toAbsolutePath(), true);
 			treeView.setRoot(directoryMonitor.model().getRoot());
 			treeView.setShowRoot(false);
 			treeView.setCellFactory(TreeItems.defaultTreePathCellFactory());
