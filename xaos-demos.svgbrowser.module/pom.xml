@@ -11,7 +11,7 @@
 
 	<artifactId>xaos-demos.svgbrowser</artifactId>
     <packaging>jar</packaging>
-    <name>XAOS SVG Browser Demo</name>
+    <name>XAOS Demos - SVG Browser</name>
 	<description>
 		A simple browser for SVG images.
 	</description>

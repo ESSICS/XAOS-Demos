@@ -11,7 +11,7 @@
 
 	<artifactId>xaos-demos.filebrowser</artifactId>
 	<packaging>jar</packaging>
-	<name>XAOS File Browser Demo</name>
+	<name>XAOS Demos - File Browser</name>
 	<description>
 		A simple file browser.
 	</description>

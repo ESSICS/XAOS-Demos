@@ -11,7 +11,7 @@
 
 	<artifactId>xaos-demos.simple</artifactId>
 	<packaging>jar</packaging>
-    <name>XAOS Simple Demo</name>
+    <name>XAOS Demos - Simple</name>
 	<description>
 		The very basic XAOS-based application.
 	</description>
